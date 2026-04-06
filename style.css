@@ -182,10 +182,9 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
   margin: 0 15%;
   box-sizing: border-box;
-  min-height: fit-content;
+  min-height: 96vh;
 }
 
 .section-container {
@@ -198,7 +197,8 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
+  height: auto;
+  padding: 8vh 0;
 }
 
 .section__pic-container {
@@ -284,7 +284,7 @@ section {
   transition: all 300ms ease;
   padding: 1rem;
   width: 8rem;
-  border-radius: 60px;        /* pill shape like reference */
+  border-radius: 60px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -297,26 +297,26 @@ section {
 
 .btn-color-1 {
   background: linear-gradient(45deg, #1a3c6e, #2563eb, #1a3c6e);
-  background-size: 200% auto;          /* makes gradient twice as wide */
-  background-position: left center;    /* starts at left */
+  background-size: 200% auto;
+  background-position: left center;
   color: white;
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
   transition: background-position 400ms ease, box-shadow 300ms ease;
 }
 
 .btn-color-1:hover {
-  background-position: right center;   /* slides to right on hover */
+  background-position: right center;
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5);
 }
 
 .btn-color-2 {
   background: linear-gradient(45deg, #1a3c6e, #2563eb, #1a3c6e);
   background-size: 200% auto;
-  background-position: right center;   /* starts showing the lighter end */
+  background-position: right center;
   color: #1a3c6e;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   transition: background-position 400ms ease, color 300ms ease, box-shadow 300ms ease;
-  -webkit-background-clip: text;       /* clips gradient to text only */
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border: #1a3c6e 0.1rem solid;
 }
@@ -338,6 +338,7 @@ section {
 
 #about {
   position: relative;
+  min-height: 96vh;
 }
 
 .about-containers {
@@ -404,6 +405,7 @@ section {
 
 #experience {
   position: relative;
+  min-height: 96vh;
   margin-bottom: 2rem;
 }
 
@@ -419,27 +421,24 @@ section {
   margin-bottom: 4rem;
 }
 
-/*forces the rows to stack vertically */
 .split-section {
   display: flex;
-  flex-direction: column; /* This forces one project per line, NO MATTER WHAT */
+  flex-direction: column;
   width: 100%;
-  max-width: 1100px;      /* Prevents the section from being too wide on huge screens */
-  margin: 0 auto;         /* Centers the whole section on the page */
+  max-width: 1100px;
+  margin: 0 auto;
   margin-top: 4rem;
-  gap: 6rem;              /* Adjust this for the spacing between Project 1, 2, and 3 */
+  gap: 6rem;
 }
 
-/* keeps the image and text side-by-side INSIDE the row */
 .project-item {
   display: flex;
-  flex-direction: row;    /* Keeps Image on left, Text on right */
-  width: 100%;            /* Tells the browser this item wants the whole row */
+  flex-direction: row;
+  width: 100%;
   align-items: flex-start;
   gap: 3rem;
 }
 
-/* Ensure the text area takes up the remaining space */
 .project-item .right {
   flex: 1;
 }
@@ -448,9 +447,8 @@ section {
   color: #F5F5F0;
 }
 
-/* Fix the image container width so they all look uniform */
 .project-item .left {
-  flex: 0 0 40%;          /* Image container takes 40% of the row */
+  flex: 0 0 40%;
 }
 
 .project-item .left img {
@@ -463,17 +461,17 @@ section {
 }
 
 .SectionContent-container {
-  padding-left: 1.5rem;  /* indents action/impact points */
+  padding-left: 1.5rem;
   margin-top: 0.5rem;
 }
 
 .SectionContent-container ul {
-  padding-left: 1.5rem;  /* indents the bullet points */
+  padding-left: 1.5rem;
   margin-top: 0.5rem;
 }
 
 .SectionContent-container li {
-  margin-bottom: 0.5rem;  /* adds spacing between bullets */
+  margin-bottom: 0.5rem;
   line-height: 1.6;
 }
 
@@ -559,7 +557,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.5rem;   /* space between icon and title */
+  margin-bottom: 0.5rem;
 }
 
 .service-icon-box img {
@@ -598,9 +596,9 @@ section {
 
 #testimonials {
   position: relative;
-  min-height: fit-content;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  height: auto;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
 }
 
 .embla {
@@ -764,7 +762,10 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  align-items: center;
+  height: auto;
+  padding: 6vh 0;
+  position: relative;
 }
 
 .contact-info-upper-container {
@@ -777,8 +778,14 @@ section {
   margin: 2rem auto;
   padding: 0.5rem;
   box-shadow: 0 4px 15px rgba(26, 60, 110, 0.08);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+.contact-info-upper-container hover {
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+  border-top-color: var(--blue-mid);
+}
+ 
 .contact-info-container {
   display: flex;
   align-items: center;
@@ -808,22 +815,34 @@ section {
 /* FOOTER SECTION */
 
 footer {
-  padding: 2rem 1rem;
+  padding: 1.5rem 2rem;
   margin: 0;
   background-color: #121212;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;          /* nav links and copyright side by side */
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
 }
 
 footer p {
   color: #b0b0b0;
+  font-size: 0.8rem;
   text-align: center;
-  margin-bottom: 2%;
 }
 
 footer a {
   color: #b0b0b0;
+  font-size: 0.8rem;
+}
+
+footer .nav-links-container {
+  display: flex;
+  justify-content: center;
+}
+
+footer .nav-links {
+  flex-direction: row;
+  gap: 1.5rem;
+  font-size: 0.8rem;
 }
